@@ -1,14 +1,16 @@
 package com.example.myapplicationasdfasdf.ej2
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplicationasdfasdf.R
 
-class FichaAdapter (private val fichas : List<Ficha>) : RecyclerView.Adapter<FichaAdapter.FichaViewHolder>(){
+class FichaAdapter (private val fichas : List<Ficha>, var contexto: Context? = null) : RecyclerView.Adapter<FichaAdapter.FichaViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FichaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ficha, parent, false)
@@ -27,8 +29,8 @@ class FichaAdapter (private val fichas : List<Ficha>) : RecyclerView.Adapter<Fic
         private var nombreFicha: TextView = itemView.findViewById(R.id.nombreFicha)
 
         fun bind(ficha: Ficha) {
-            imagenFicha = ficha.imagen
-            nombreFicha = ficha.nombre
+            imagenFicha.setImageResource(ficha.imagen)
+            nombreFicha.setText(ficha.nombre)
         }
     }
 }

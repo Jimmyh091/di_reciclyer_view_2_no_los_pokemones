@@ -24,6 +24,21 @@ class ejericico2 : AppCompatActivity() {
             insets
         }
 
-        bind.reciclar2.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val listaFichas = listOf(
+            Ficha(R.drawable.pizza, "Pizza"),
+            Ficha(R.drawable.pizza, "Pizza"),
+            Ficha(R.drawable.pizza, "Pizza"),
+            Ficha(R.drawable.pizza, "Pizza"),
+            Ficha(R.drawable.pizza, "Pizza"),
+            Ficha(R.drawable.pizza, "Pizza"),
+            Ficha(R.drawable.pizza, "Pizza")
+            )
+
+        var adapterF = FichaAdapter(listaFichas, applicationContext)
+
+        bind.reciclar2.apply {
+            layoutManager = LinearLayoutManager(this@ejericico2, LinearLayoutManager.HORIZONTAL, false)
+            adapter = adapterF
+        }
     }
 }
