@@ -1,12 +1,13 @@
-package com.example.myapplicationasdfasdf
+package com.example.myapplicationasdfasdf.ej1
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplicationasdfasdf.R
 
-class MainActivity : AppCompatActivity() {
+class Ejercicio1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
