@@ -20,7 +20,7 @@ import com.example.myapplicationasdfasdf.R
 import com.example.myapplicationasdfasdf.databinding.ActivityEjercicio3Binding
 
 
-class Ejercicio3 : AppCompatActivity() {
+class Ejercicio3 : AppCompatActivity(), OnClickListener {
 
     private lateinit var bind : ActivityEjercicio3Binding
 
@@ -37,9 +37,6 @@ class Ejercicio3 : AppCompatActivity() {
             insets
         }
 
-
-
-
         val listaComidas = mutableListOf(
             Comida("Pizza"),
             Comida("Pizza"),
@@ -49,16 +46,10 @@ class Ejercicio3 : AppCompatActivity() {
             Comida("Pizza")
         )
 
-        var adapterC = ComidaAdapter(listaComidas, applicationContext)
+        var adapterC = ComidaAdapter(listaComidas, this, applicationContext)
 
         bind.ej3ButtonAniadir.setOnClickListener {
             adapterC.addComida(Comida(bind.ej3TietBuscador.text.toString()))
-            adapterC.notifyDataSetChanged()
-        }
-
-        bind.ej3_button_borrar.setOnClickListener {
-            adapterC.removeComida(Comida(bind.ej3TietBuscador.text.toString()))
-            adapterC.notifyDataSetChanged()
         }
 
         bind.reciclar3.apply {
@@ -67,5 +58,7 @@ class Ejercicio3 : AppCompatActivity() {
         }
     }
 
-
+    override fun onLongClick(comida: Comida) {
+        TODO("Not yet implemented")
+    }
 }

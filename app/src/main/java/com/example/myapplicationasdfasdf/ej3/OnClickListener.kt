@@ -1,5 +1,5 @@
 package com.example.myapplicationasdfasdf.ej3
 
-interface onClickListener {
+interface OnClickListener {
     fun onLongClick (comida: Comida)
 }
