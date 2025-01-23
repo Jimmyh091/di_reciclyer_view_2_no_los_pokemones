@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplicationasdfasdf.R
 
-class ComidaAdapter (var comidas : List<Comida>, var contexto: Context? = null) : RecyclerView.Adapter<ComidaAdapter.ComidaViewHolder>() {
+class ComidaAdapter (var comidas : MutableList<Comida>, var contexto: Context? = null) : RecyclerView.Adapter<ComidaAdapter.ComidaViewHolder>() {
 
     inner class ComidaViewHolder(comida: View) : RecyclerView.ViewHolder(comida) {
         private var imagenComida: ImageView = comida.findViewById(R.id.imagenComida)
@@ -33,5 +33,11 @@ class ComidaAdapter (var comidas : List<Comida>, var contexto: Context? = null) 
 
     override fun getItemCount(): Int = comidas.size
 
+    fun addComida(comida: Comida) {
+        comidas.add(comida)
+    }
 
+    fun removeComida(comida: Comida) {
+        comidas.remove(comida)
+    }
 }

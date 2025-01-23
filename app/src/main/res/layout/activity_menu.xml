@@ -8,7 +8,7 @@
     tools:context=".Menu">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tituloMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ejercicios Recycler View"
@@ -19,42 +19,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_ej1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Ejercicio 1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloMenu" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_ej2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Ejercicio 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button_ej1" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_ej3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Ejercicio 3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button_ej2" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button_ej4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Ejercicio 4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/button_ej3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
