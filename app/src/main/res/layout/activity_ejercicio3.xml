@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toStartOf="@id/ej3_imagenComida"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
@@ -35,18 +35,6 @@
             android:hint="Introducir" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ej3_imagenComida"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="20dp"
-        android:adjustViewBounds="true"
-        app:layout_constraintBottom_toBottomOf="@+id/ej3_til_buscador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ej3_til_buscador"
-        app:layout_constraintTop_toTopOf="@+id/ej3_til_buscador"
-        android:src="@drawable/archivo_vacio" />
 
     <Button
         android:id="@+id/ej3_button_aniadir"
@@ -65,7 +53,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ej3_imagenComida"
+        app:layout_constraintEnd_toEndOf="@+id/ej3_til_buscador"
         app:layout_constraintStart_toStartOf="@+id/ej3_til_buscador"
         app:layout_constraintTop_toBottomOf="@id/ej3_button_aniadir" />
 

@@ -1,4 +1,4 @@
 package com.example.myapplicationasdfasdf.ej3
 
-data class Comida (var imagen : Int, var nombre : String) {
+data class Comida (var nombre : String) {
 }
