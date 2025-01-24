@@ -11,8 +11,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comida"
         android:layout_marginTop="20dp"
+        android:text="Comida"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,21 +40,45 @@
         android:id="@+id/ej3_button_aniadir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Añadir"
         android:layout_margin="10dp"
+        android:text="Añadir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ej3_til_buscador" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reciclar3"
+        android:id="@+id/recyclerView_comer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/comidaComida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ej3_button_aniadir"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/comidaComida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comida comida"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView_comido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_comer" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_comido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ej3_til_buscador"
-        app:layout_constraintStart_toStartOf="@+id/ej3_til_buscador"
-        app:layout_constraintTop_toBottomOf="@id/ej3_button_aniadir" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comidaComida" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.example.myapplicationasdfasdf.ej3
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplicationasdfasdf.R
 import com.example.myapplicationasdfasdf.databinding.ItemComidaBinding
 
-class ComidaAdapter (var comidas : MutableList<Comida>, private val listener: OnClickListener, private val mover: onItemChecked, private val toAdapter2: ComidaAdapter2, private var contexto: Context? = null) : RecyclerView.Adapter<ComidaAdapter.ComidaViewHolder>() {
+class ComidaAdapter2 (var comidas : MutableList<Comida>, private val listener: OnClickListener, private val mover: onItemChecked, private var contexto: Context? = null) : RecyclerView.Adapter<ComidaAdapter2.ComidaViewHolder>() {
+
+    private lateinit var toAdapter: ComidaAdapter
 
     inner class ComidaViewHolder(comida: View) : RecyclerView.ViewHolder(comida) {
 
@@ -23,13 +24,10 @@ class ComidaAdapter (var comidas : MutableList<Comida>, private val listener: On
                 comidas.removeAt(adapterPosition)
                 notifyItemRemoved(adapterPosition)
             }
-
         }
 
-        fun bind(comida: Comida) {
-            checkBox.text = comida.nombre
-            checkBox.isChecked = comida.checkeada
-            Log.v("checkeada", "${comida.checkeada.toString()}")
+        fun bind(ficha: Comida) {
+            checkBox.text = ficha.nombre
         }
 
         fun setListener(comida: Comida) {
@@ -45,14 +43,13 @@ class ComidaAdapter (var comidas : MutableList<Comida>, private val listener: On
         return ComidaViewHolder(view)
     }
 
+    override fun getItemCount(): Int = comidas.size
+
     override fun onBindViewHolder(holder: ComidaViewHolder, position: Int) {
 
         holder.binding.checkBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                mover.onItemMoved1(comidas[position], position, this, toAdapter2)
-                comidas[position].checkeada = false
-            }else{
-                comidas[position].checkeada = true
+                mover.onItemMoved2(comidas[position], position, this@ComidaAdapter2, toAdapter)
             }
         }
 
@@ -60,8 +57,6 @@ class ComidaAdapter (var comidas : MutableList<Comida>, private val listener: On
         holder.setListener(currentComida)
         holder.bind(currentComida)
     }
-
-    override fun getItemCount(): Int = comidas.size
 
     fun addComida(comida: Comida) {
         comidas.add(comida)
@@ -72,4 +67,9 @@ class ComidaAdapter (var comidas : MutableList<Comida>, private val listener: On
         comidas.remove(comida)
         notifyItemRemoved(position)
     }
+
+    fun setAdapter(adapter: ComidaAdapter) {
+        toAdapter = adapter
+    }
+
 }
